@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#160c19">
+<title>İyi ki Doğdun Güzelim ❤️</title>
+<style>
+:root{--pink:#ff82a8;--cream:#fff0f3;--muted:#e7c4d0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--cream);font-family:Georgia,"Times New Roman",serif;background:#160c19}
+.scene{min-height:100vh;position:relative;overflow:hidden;isolation:isolate;background:
+ radial-gradient(ellipse at 52% 43%,#a94e65 0%,#5b2944 23%,transparent 54%),
+ linear-gradient(90deg,#100b13 0%,#24101f 35%,#351426 67%,#100911 100%)}
+.scene:before{content:"";position:absolute;inset:0;z-index:-2;background:
+ linear-gradient(0deg,#100910 0%,transparent 32%,#160b18aa 100%),
+ radial-gradient(ellipse at 52% 60%,#ff8d6a 0%,#a64b60 13%,#48203b 34%,transparent 61%)}
+.scene:after{content:"";position:absolute;inset:0;z-index:-1;opacity:.22;background-image:
+ repeating-linear-gradient(90deg,transparent 0 9%,#08070b 9.2% 9.7%,transparent 10% 19%),
+ linear-gradient(0deg,#07060a 0%,transparent 27%,transparent 75%,#08070a 100%);pointer-events:none}
+.layout{width:min(1400px,100%);min-height:100vh;margin:auto;padding:48px clamp(20px,5vw,76px) 30px;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,76px);align-items:center}
+.left{text-align:center;padding:16px 0 8px;position:relative}
+.kicker{font:11px/1.8 Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#f5b1c8}
+.rule{display:flex;align-items:center;justify-content:center;gap:16px;margin:18px auto 8px;color:var(--pink)}
+.rule:before,.rule:after{content:"";height:1px;width:90px;background:linear-gradient(90deg,transparent,var(--pink))}
+.rule:after{transform:rotate(180deg)}
+h1{font-size:clamp(45px,6vw,83px);line-height:.98;font-weight:400;margin:14px 0 0;letter-spacing:-2px;text-shadow:0 3px 24px #170610}
+.script{display:block;color:#ff7fa5;font-style:italic;font-size:clamp(52px,7vw,91px);line-height:1.15;margin:0 0 12px;transform:rotate(-4deg)}
+.sub{font-size:17px;line-height:1.8;color:#ffe8ed;margin:20px auto 22px;max-width:420px}
+.cta{border:1px solid #ffb1c9;background:linear-gradient(135deg,#ff8eb1,#c82e68);color:#fff7fa;padding:15px 28px;border-radius:40px;font:15px Georgia,serif;cursor:pointer;box-shadow:0 8px 35px #ff477c44;transition:transform .2s,filter .2s}
+.cta:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.cake{font-size:clamp(75px,9vw,120px);margin:26px 0 0;filter:drop-shadow(0 10px 25px #08040a);animation:candle 2s ease-in-out infinite alternate}
+@keyframes candle{to{filter:drop-shadow(0 0 28px #ff9d6a88)}}
+.roses{position:absolute;left:-22px;bottom:0;font-size:clamp(36px,5vw,64px);opacity:.82;filter:drop-shadow(0 0 14px #b42343)}
+.panel{border:1px solid #f68cad66;border-radius:20px;background:linear-gradient(145deg,#160a18eF,#100811f5);padding:clamp(24px,3vw,42px);box-shadow:0 20px 80px #09050a88;position:relative}
+.panel .rule{margin:0 auto 20px}
+.message{font-size:clamp(15px,1.25vw,17px);line-height:1.72;color:#fff0f3;white-space:pre-line}
+.message p{margin:0 0 18px}
+.signature{text-align:right;color:#ff83a9;font-style:italic;font-size:24px;margin-top:20px}
+.foot{text-align:center;color:#d5a3b6;font-size:12px;letter-spacing:.6px;margin-top:28px}
+.foot span{color:var(--pink);padding:0 12px}
+.heart{position:fixed;top:-40px;z-index:5;pointer-events:none;animation:fall linear forwards;filter:drop-shadow(0 0 5px #ff6688)}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+.hidden{display:none!important}
+#toast{color:#ffc0d2;font-size:13px;margin-top:12px;min-height:18px}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:28px;padding-top:34px}.left{padding:10px 0}.panel{max-width:650px;margin:0 auto;width:100%}.cake{margin-top:12px}.roses{display:none}.scene{background:#24101f}.message{font-size:16px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="scene">
+  <main class="layout">
+    <section class="left">
+      <div class="kicker">Bugün dünyadaki en güzel günlerden biri</div>
+      <div class="rule">♡</div>
+      <h1>İyi ki Doğdun</h1>
+      <span class="script">Güzelim</span>
+      <div class="rule">♡</div>
+      <p class="sub">Bugün senin günün…<br>Ve ben bu güzel günde yüzünde bir tebessüm bırakmak istedim.</p>
+      <button class="cta" id="surprise">✦ &nbsp; Küçük bir sürprizin var</button>
+      <div id="toast" aria-live="polite"></div>
+      <div class="cake" aria-label="Doğum günü pastası">🎂</div>
+      <div class="roses" aria-hidden="true">🌹 🌹</div>
+    </section>
+    <section class="panel" id="letter">
+      <div class="rule">♡</div>
+      <div class="message">
+        <p>Güzelim, doğum günün kutlu olsun. ❤️</p>
+        <p>Nice güzel yaşların, nice güzel anların, kalbini mutlulukla dolduran nice güzel zamanların olsun. Hayat sana hep gülümsemek için sebepler versin. Gözlerinin içinin parladığı, hayallerinin gerçeğe dönüştüğü, huzurla uyuyup mutlulukla uyandığın bir yaş olsun.</p>
+        <p>Dilerim hayat karşına hep güzel insanlar, güzel fırsatlar ve unutamayacağın anılar çıkarsın. Ne yaşarsan yaşa, içindeki o güzel ışık hiç sönmesin.</p>
+        <p>Ve ben…</p>
+        <p>Nice güzel yaşlarına, nice güzel anlarına, nice güzel zamanlarına eşlik edebileyim istiyorum. Birlikte gülebildiğimiz, küçük şeylerden mutlu olabildiğimiz, zaman geçse de güzelliğini kaybetmeyen anılar biriktirebilelim.</p>
+        <p>Bugün senin doğum günün ama iyi ki doğmuş olmanın mutluluğunu biraz da ben yaşıyorum. Çünkü senin bu dünyada olman bile başlı başına güzel bir şey.</p>
+        <p>Yeni yaşın kalbin kadar güzel, gülüşün kadar aydınlık, hayallerin kadar umut dolu olsun.</p>
+        <p>İyi ki doğdun güzelim. İyi ki varsın. ❤️</p>
+      </div>
+      <div class="signature">Nice güzel yaşlarına…</div>
+      <div class="rule">♡</div>
+    </section>
+  </main>
+  <div class="foot"><span>────</span>♫ &nbsp; Hayat, seninle daha güzel… &nbsp; <span>────</span></div>
+</div>
+<script>
+const button=document.getElementById('surprise');
+const letter=document.getElementById('letter');
+let revealed=false;
+button.addEventListener('click',()=>{
+  if(!revealed){
+    letter.scrollIntoView({behavior:'smooth',block:'center'});
+    document.getElementById('toast').textContent='Bu satırların hepsi senin için… ❤️';
+    revealed=true;
+    button.textContent='♥  İyi ki doğdun güzelim';
+  }
+  const icons=['❤️','💕','💗','✨','🌹','💖'];
+  for(let i=0;i<55;i++){
+    const el=document.createElement('span');
+    el.className='heart';el.textContent=icons[Math.floor(Math.random()*icons.length)];
+    el.style.left=Math.random()*100+'vw';
+    el.style.fontSize=(14+Math.random()*20)+'px';
+    el.style.animationDuration=(3+Math.random()*4)+'s';
+    el.style.animationDelay=(Math.random()*1.5)+'s';
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),8500);
+  }
+});
+</script>
+</body>
+</html>
